@@ -14,7 +14,7 @@ public class Game {
     HashSet<Character> usersGuesses = new HashSet<Character>();
 
     private void getRandomWordFromFile() {
-        String filePath = "words.txt";
+        String filePath = "D:\\Projects\\Hangman\\words.txt";
         try {
             List<String> words = Files.readAllLines(Paths.get(filePath));
             Random random = new Random();
@@ -30,10 +30,12 @@ public class Game {
 
     private void createHiddenWord() {
         hiddenWord = new StringBuilder("*".repeat(randomWord.length()));
+        System.out.println(HangmanSteps.START);
         randomWordChars = randomWord.toCharArray();
     }
 
     private void showHangman() {
+
         switch (tries) {
             case 6:
                 System.out.println(HangmanSteps.START);
@@ -64,7 +66,8 @@ public class Game {
         if (hiddenWord.toString().equals(randomWord)) {
             gameOver = true;
             System.out.println("Поздравляем! Вы угадали слово: " + randomWord);
-            System.out.println("Чтобы начать заного нажмите любую клавишу, для выхода напишите слово: выход");
+            System.out.println("Чтобы начать заного введите любую клавишу, для выхода введите слово: выход");
+
             exit = scanner.nextLine().toLowerCase();
             if (!exit.equals("выход")) {
                 getRandomWordFromFile();
@@ -100,6 +103,7 @@ public class Game {
                 System.out.println("Только кириллица!" + " Попыток осталось: " + tries);
                 return;
             }
+
             if (usersGuesses.contains(usersGuess)) {
                 System.out.println("Вы уже вводили эту букву. Попробуйте другую." + " Попыток осталось: " + tries);
                 return;
@@ -124,6 +128,8 @@ public class Game {
 
         }
     }
+
+
 
     public void starGame() {
         getRandomWordFromFile();

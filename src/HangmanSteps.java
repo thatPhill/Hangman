@@ -5,7 +5,11 @@ public enum HangmanSteps {
      FOUR("|--------|\n|\t\t\\O/\n|\t\t |\n|\t\t/\n|\n|\n|\n|\n|\n"),
      FIVE("|--------|\n|\t\t\\O/\n|\t\t |\n|\t\t/\\\n|\n|\n|\n|\n|\n"),
      SIX("|--------|\n|\t\t\\O/\n|\t\t |\n|\t     /\\ \n|\t\tПоследняя попытка!\n|\n|\n|\n|\n"),
-     DEAD("|--------|\n|\t\t\\O/\n|\t\t |\n|\t     /\\ \n|\t\tDEAD\n|\n|\n|\n|\n"), START("|\n|\n|\n|\n|\n|\n|\n|");
+     DEAD("|--------|\n|\t\t\\O/\n|\t\t |\n|\t     /\\ \n|\t\tDEAD\n|\n|\n|\n|\n"),
+     START("|-------\n|\n|\n|\n|\n|\n|\n|");
+
+
+
 
      private final String step;
 
